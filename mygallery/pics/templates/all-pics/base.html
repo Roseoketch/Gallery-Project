@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
    {% if title %}
-  <title>Gallery </title>
+  <title>Gallery -{{title}} </title>
   {% else %}
   <title> Gallery </title>
   {% endif %}
@@ -24,8 +24,6 @@
    {% include 'navbar.html' %}{% block scripts %}
   {%block content %}{% endblock %}
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript">
-  </script>
    {% bootstrap_javascript %}{% endblock %}
 </body>
 
