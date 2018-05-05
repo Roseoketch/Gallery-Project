@@ -1,11 +1,10 @@
-
-{% extends 'base.html' %} {% block content %}
+{% extends 'all-pics/base.html' %} {% block content %}
 <div class="container">
   <section class="no-touch">
     <div class="wrap">
       {% if photos %}
       <p class="text-center" style="font-size:1.3em">Search Results: <span>{{photos|length}}</span> found matching your search crireria</p>
-      {% for photo_item in photos%}
+      {% for photo in photos %}
       <a href="{% url 'myPhoto' photo_item.id %}">
       <div class="box">
         <div class="boxInner">
@@ -18,6 +17,7 @@
       {% else %}
       <div class="wrap">
         <h1 class="text-center">No Photos found with that search criteria </h1>
+        <h4>Sorry kindly upload more Photos , thanks!</h4>
       </div>
       {% endif %}
     </div>
