@@ -60,3 +60,9 @@ class PhotosTestClass(TestCase):
         self.photo.delete_image()
         photos = Photos.objects.all()
         self.assertTrue(len(photos)==0)
+
+# class Editor(models.Model):
+#     first_name = models.CharField(max_length =30)
+#     last_name = models.CharField(max_length =30)
+#     email = models.EmailField()
+#     phone_number = models.CharField(max_length = 10,blank =True)
