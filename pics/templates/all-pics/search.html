@@ -2,20 +2,23 @@
 
 {% block content %}
 {{ block.super}}
+{% load static %}
 
 <div class="container">
 
     <!-- Looping through images   -->
-    {% for pics_col in pics %}
+     {% for pics_col in pics %}
 
     <div class="row">
       <!-- displaying Images name-->
-      <div class="col-md-4">
+       <div class="col-md-4">
         <h2 class="text-center"> {{ pics_col.image_name }} </h2>
         <img src="{{pics_col.post_image.url}}" class="img-responsive" alt="Image" style="width: 500px; height: 250px;">
         <p class="text-center">{{pics_col.image_description}}</p>
         <p class="text-center">Location: {{pics_col.image_location}}</p>
         <p class="text-center">Posted on: {{ pics_col.pub_date}}</p>
+        <img src="{% static 'images/flowers.jpg'%}" alt="avatar" class="img-responsive avatar">
+
       </div>
 
     {% empty %}
@@ -27,3 +30,33 @@
   </div>
 
   {% endblock %}
+  <!-- {% extends 'all-pics/base.html' %} {% block content %}
+  {% load static%}
+  <div class="container">
+    <section class="no-touch">
+      <div class="wrap">
+        {% if photos %}
+        <p class="text-center" style="font-size:1.3em">Search Results: <span>{{photos|length}}</span> found matching your search crireria</p>
+        {% for photo in photos %}
+        <a href="{% url 'myPhoto' photo_item.id %}">
+        <div class="box">
+          <div class="boxInner">
+            <img src="{{photo_item.image.url}}"  class="img-responsive">
+            <div class="titleBox" style="font-family: 'Cabin Sketch', cursive">{{photo_item.name|upper}}</div>
+          </div>
+        </div>
+        </a>
+        {% endfor %}
+        {% else %}
+        <div class="wrap">
+          <h1 class="text-center">No Photos found with that search criteria </h1>
+          <h4>Sorry kindly upload more Photos, thanks!</h4>
+          <img src="{% static 'images/flowers.jpg'%}" alt="avatar" class="img-responsive avatar">
+        </div>
+        {% endif %}
+      </div>
+
+    </section>
+  </div>
+
+  {% endblock %} -->
