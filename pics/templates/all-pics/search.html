@@ -1,4 +1,5 @@
 {% extends 'all-pics/base.html' %} {% block content %}
+{% load static%}
 <div class="container">
   <section class="no-touch">
     <div class="wrap">
@@ -18,6 +19,7 @@
       <div class="wrap">
         <h1 class="text-center">No Photos found with that search criteria </h1>
         <h4>Sorry kindly upload more Photos , thanks!</h4>
+        <img src="{% static 'images/flowers.jpg'%}" alt="avatar" class="img-responsive avatar">
       </div>
       {% endif %}
     </div>
