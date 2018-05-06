@@ -1,8 +1,10 @@
 # # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.shortcuts import render, Http404
+from django.shortcuts import render,redirect
+from django.http import HttpResponse, Http404
 from .models import Photos
+import datetime as dt
 
 # Create your views here.
 def my_gallery(request):
@@ -22,3 +24,17 @@ def search_results(request):
     else:
         message = "You haven't searched for any photos."
         return render(request, 'all-pics/search.html', {"message":message})
+
+def past_pics (request, past_date):
+    #Convert date from the url string
+
+    try:
+        date = dt.datetime.strptime(past_date, '%Y-%m-%d').date()
+    except ValueError:
+        raise Http404()
+        assert False
+
+    if date ==dt.date.today():
+        return redirect(todays_pics)
+
+    return render(request, 'all-pics/past_pics.html', {"date": date})
