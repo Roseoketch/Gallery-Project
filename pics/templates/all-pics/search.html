@@ -3,25 +3,21 @@
 <div class="container">
   <section class="no-touch">
     <div class="wrap">
-      {% if photos %}
-      <p class="text-center" style="font-size:1.3em">Search Results: <span>{{photos|length}}</span> found matching your search crireria</p>
-      {% for photo_item in photos%}
-      
-      <a href="{% url 'myPhoto' photo_item.id %}">
-      <div class="box">
-        <div class="boxInner">
-          <img src="{{photo_item.image.url}}"  class="img-responsive">
-          <div class="titleBox" style="font-family: 'Cabin Sketch', cursive">{{photo_item.name|upper}}</div>
-        </div>
-      </div>
-      </a>
-      {% endfor %}
+      {% if searched_images %}
+      <p class="text-center" style="font-size:1.3em">Search Results: <span>{{searched_images|length}}</span> found</p>
       {% else %}
-      <div class="wrap">
-        <h1 class="text-center">No Photos found with that search criteria </h1>
-      </div>
+      <h1 class="text-center" style="font-family: 'Handlee', cursive; color:blue;">No Photos found with that search criteria </h1>
       {% endif %}
     </div>
+
+   {% if searched_images %}
+    {% for image in searched_images %}
+      <!-- <div class="col-sm-6 col-md-3">
+          <a href="{% url 'details' image.id%}"><h1>{{image.image_name}}</h1></a>
+      </div> -->
+    {% endfor %}
+  {% endif %}
+  </div>
 
   </section>
 </div>

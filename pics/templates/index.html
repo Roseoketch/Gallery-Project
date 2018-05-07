@@ -11,6 +11,7 @@
   <div class="row" style="background-color:grey;">
     <!-- displaying News articles -->
     <div class="col-md-4">
+      <br>
       <h2 class="text-center pics"> {{ pics_item.name }} </h2>
       <p class="text-center item">{{ pics_item.descripton }}></p><br>
       <p class="text-center item" style="color:white;" style="font-family: 'Handlee', cursive;
@@ -34,21 +35,14 @@
             border-radius: 50%;
             color: white;
           }
-          p .image{
-            backface-visibility: hidden;
-            border-radius: 6px;
-            height: 100%;
-            position: absolute;
-            overflow: hidden;
-            width: 100%;
-          }
+
         </style>
 
     <!--Display news Article images  -->
     <div class="col-md-8">
-      <img src="{{pics_item.image.url}}" class="img-responsive image" alt="Image" width="200px" height="300px">
+      <img src="{{pics_item.name}}" class="img-responsive image" alt="Image" width="200px" height="300px">
       <div id="buttons" style="margin-left:50%">
-        <a href="{{pics_item.image.url" class="btn btn-default btn-block">Copy Image link  &nbsp<i class="glyphicon glyphicon-paperclip"></i>
+        <a href="{{pics_item.descripton}}" class="btn btn-default btn-block">Copy Image link  &nbsp<i class="glyphicon glyphicon-paperclip"></i>
     </a></div>
     </div>
   </div>
