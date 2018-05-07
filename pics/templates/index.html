@@ -9,18 +9,37 @@
     <!-- displaying News articles -->
     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
       <h2 class="text-center pics"> {{ pics_item.name }} </h2>
-      <p class="text-center">{{ pics_item.descripton }}>
+      <p class="text-center item">{{ pics_item.descripton }}>
         <style media="screen">
           p{
             font-family: 'Great Vibes', cursive;
             font-size: 30px;
            }
+           h2 .pics{
+             background: #2db34a;
+             border-radius: 6px
+             transition-property: background, border-radius;
+             transition-duration: 1s;
+             transition-timing-function: linear;
+           }
+          .pics:hover{
+            background: #ff7b29;
+            border-radius: 50%;
+          }
+          p .image{
+            backface-visibility: hidden;
+            border-radius: 6px;
+            height: 100%;
+            position: absolute;
+            overflow: hidden;
+            width: 100%;
+          }
         </style>
     </div>
 
     <!--Display news Article images  -->
     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-      <img src="{{pics_item.image.url}}" class="img-responsive" alt="Image" width="150px" height="200px">
+      <img src="{{pics_item.image.url}}" class="img-responsive image" alt="Image" width="150px" height="200px">
       <div id="buttons">
         <a href="#" class="btn btn-default btn-block">Copy Image link  &nbsp<i class="glyphicon glyphicon-paperclip"></i>
     </a></div>
