@@ -1,5 +1,6 @@
-Gallery-Project
-This is gallery app that displays various pictures and brief description of them.
+* Gallery-Project *
+
+# This is gallery app that displays various pictures and brief description of them.
 
 By Rose Oketch
 
