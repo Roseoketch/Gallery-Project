@@ -10,10 +10,12 @@
 
   <div class="row" style="background-color:grey;">
     <!-- displaying News articles -->
-    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+    <div class="col-md-4">
       <h2 class="text-center pics"> {{ pics_item.name }} </h2>
       <p class="text-center item">{{ pics_item.descripton }}></p><br>
-      <p class="text-center item" style="color:white;">This was taken at:<br>{{ pics_item.location_taken }} on {{ pics_item.time_uloaded}}</p>
+      <p class="text-center item" style="color:white;" style="font-family: 'Handlee', cursive;
+">This was taken at:<br>{{ pics_item.location_taken }} on {{ pics_item.time_uloaded}}</p>
+    </div>
 
         <style media="screen">
           p{
@@ -41,17 +43,16 @@
             width: 100%;
           }
         </style>
-    </div>
 
     <!--Display news Article images  -->
-    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-      <img src="{{pics_item.image.url}}" class="img-responsive image" alt="Image" width="150px" height="200px">
+    <div class="col-md-8">
+      <img src="{{pics_item.image.url}}" class="img-responsive image" alt="Image" width="200px" height="300px">
       <div id="buttons" style="margin-left:50%">
         <a href="{{pics_item.image.url" class="btn btn-default btn-block">Copy Image link  &nbsp<i class="glyphicon glyphicon-paperclip"></i>
     </a></div>
     </div>
-
   </div>
+
   <br>
   <hr>
   <br>
