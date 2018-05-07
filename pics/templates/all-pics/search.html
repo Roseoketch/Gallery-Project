@@ -6,6 +6,7 @@
       {% if photos %}
       <p class="text-center" style="font-size:1.3em">Search Results: <span>{{photos|length}}</span> found matching your search crireria</p>
       {% for photo_item in photos%}
+      
       <a href="{% url 'myPhoto' photo_item.id %}">
       <div class="box">
         <div class="boxInner">
@@ -21,7 +22,7 @@
       </div>
       {% endif %}
     </div>
-  
+
   </section>
 </div>
 
