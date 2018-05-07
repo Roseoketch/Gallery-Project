@@ -9,7 +9,7 @@ import datetime as dt
 # Create your views here.
 def my_gallery(request):
     photos = Photos.objects.all()
-    return render(request, 'gallery.html')
+    return render(request, 'index.html')
 
 def single_photo(request, photo_id):
     photo = Photos.objects.get(id=photo_id)
@@ -36,5 +36,5 @@ def past_pics (request, past_date):
 
     if date ==dt.date.today():
         return redirect(todays_pics)
-
+    pics=Photo.days_pics(date)
     return render(request, 'all-pics/past_pics.html', {"date": date})

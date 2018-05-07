@@ -6,7 +6,7 @@ from .models import Photos, categories, Location
 
 class LocationTestClass(TestCase):
     def setUp(self):
-        self.location = Location(name = 'Ngong')
+        self.location = Location(name = 'Moringa')
 
     def test_instance(self):
         self.assertTrue(isinstance(self.location, Location))
