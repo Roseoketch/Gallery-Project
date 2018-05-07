@@ -9,7 +9,7 @@ import datetime as dt
 # Create your views here.
 def my_gallery(request):
     photos = Photos.objects.all()
-    return render(request, 'index.html')
+    return render(request, 'index.html', {"photos":photos})
 
 def single_photo(request, photo_id):
     photo = Photos.objects.get(id=photo_id)
