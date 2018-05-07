@@ -9,15 +9,15 @@
 * Browser
 * Good internet connection
 
-Technologies used
-HTML
-CSS
-BOOTSTRAP
-DJANGO(PYTHON)
-Deployment
-HEROKU
-Meta
+# Technologies used
+* HTML
+* CSS
+* BOOTSTRAP
+* DJANGO(PYTHON)
+* Deployment
+* HEROKU
+* Meta
 
-License
+# License
 This is an opensource software therefore the license is MIT 
 Copyright (c) 2018 Legacy Softwares
