@@ -26,7 +26,8 @@ SECRET_KEY =config('SECRET_KEY')
 # "$for$8lz614zoo92d&hz*5n)njszursbn-y0=wp9swl&i_imd&"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG =config('DEBUG', default=False, cast=bool)
+DEBUG =True
+# config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = ['*']
 
