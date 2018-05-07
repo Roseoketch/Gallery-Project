@@ -1,13 +1,13 @@
-* Gallery-Project *
+# Gallery-Project 
 
-# This is gallery app that displays various pictures and brief description of them.
+* This is gallery app that displays various pictures and brief description of them.
 
-By Rose Oketch
+# By Rose Oketch
 
-Requirements
+# Requirements
 
-Browser
-Good internet connection
+* Browser
+* Good internet connection
 
 Technologies used
 HTML
