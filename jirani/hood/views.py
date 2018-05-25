@@ -18,20 +18,20 @@ def neighbor(request):
     neighbor = Neighbor.objects.all()
 
 
-    return render(request, 'groups.html', {"date": date,"neighbor":neighbor,})
+    return render(request, 'hood.html', {"date": date,"neighbor":neighbor,})
 
 # def new_neighbor(request):
 #     current_user = request.user
 #     form = NewNeihborForm()
 #     if request.method == 'post':
-#         form = NewHoodForm(request.POST, request.FILES)
+#         form = NewNeighborForm(request.POST, request.FILES)
 #         if form.is_valid():
-#             hood = form.save(commit=False)
-#             hood.user = current_user
+#             neighbor = form.save(commit=False)
+#             neighbor.user = current_user
 #         else:
 #             if request.method == 'POST':
 #                 form = myNewProfile(request.post,request.FILES)
-#                 hood.user = current_user
-#                 hood.save()
+#                 neighbor.user = current_user
+#                 neighbor.save()
 #                 return redirect('home')
 #     return render(request, 'new-hood.html', {'form':form })
