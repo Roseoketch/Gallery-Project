@@ -53,12 +53,12 @@ class Business(models.Model):
         self.delete()
 
     @classmethod
-    def get_business(cls):
+    def find_business(cls):
         biz = Business.objects.all()
         return biz
 
     @classmethod
-    def find_business(cls,search_term):
+    def search_business(cls,search_term):
         business = cls.objects.filter(name__icontains=search_term)
         return business
 
