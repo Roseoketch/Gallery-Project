@@ -6,7 +6,13 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 def welcome(request):
-    return render(request, 'index.html')
+    current_user = request.user
+    profile = MyUser.get_user()
+    posts = Post.get_post()
+    return render(request,'index.html',{"current_user":current_user,
+                                        "profile":profile,
+                                        "posts":posts})
+
 
 
 def home(request):
