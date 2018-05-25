@@ -65,3 +65,47 @@ class Business(models.Model):
     @classmethod
     def update_business(cls,id,name):
         updated = Business.objects.filter(id=business.id).update(name=name)
+
+class MyUser(models.Model):
+    name = models.CharField(max_length=60)
+    id_no = models.CharField(max_length=60)
+    profile_pic = models.ImageField(upload_to ='upload/',blank=True,null=True)
+    user = models.ForeignKey(User,on_delete=models.CASCADE)
+    jirani = models.ForeignKey(Neighbor,on_delete=models.CASCADE)
+    business = models.ForeignKey(Business,on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
+
+    def save_user(self):
+        self.save()
+
+    def delete_user(self):
+        self.delete()
+
+    @classmethod
+    def get_user(cls):
+        users = MyUser.objects.all()
+        return users
+
+# class Post(models.Model):
+#     post = models.TextField()
+#     editor = models.ForeignKey(MyUser,on_delete=models.CASCADE)
+#     post_date =  models.DateTimeField(auto_now_add=True)
+#
+#     def __str__(self):
+#         return self.post
+#
+#     class Meta:
+#         ordering=['-post_date']
+#
+#     def save_post(self):
+#         self.save()
+#
+#     def delete_post(self):
+#         self.delete()
+#
+#     @classmethod
+#     def get_post(cls):
+#         post = Post.objects.all()
+#         return post
