@@ -7,6 +7,9 @@ class Neighbor(models.Model):
     location = models.CharField(max_length =30, null =True)
     occupants_count = models.PositiveIntegerField(default=0)
     admin_foreign_key = models.ForeignKey(User, on_delete=models.CASCADE, null= True)
+    health_number = models.CharField(max_length=13)
+    police_number = models.CharField(max_length=13)
+
 
     def __str__(self):
         return self.name
