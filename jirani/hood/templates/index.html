@@ -16,14 +16,9 @@
       <div class="col-md-1 col-lg-1 col-sm-1 col-xs-1"></div>
       <div class="col-md-10 col-lg-10 col-sm-10 col-xs-10">
 
-        {% if user in MyUser is_authenticated %}
-        <p>Create profile</p>
+        <p>Are you new here? <a href= class="btn btn-default">Create Profile</a></p>
 
-        {%else%}
-        <p class="btn btn-default">Sing up {% url ''%}</p>
-
-        {% for post in posts %}
-
+        
         <div class="card" style="margin-bottom:60px;">
           <div class="card-header">
             <p>Whats on your mind? <a href="{% url 'post' %}">Post</a></p>
@@ -31,23 +26,18 @@
         </div>
 
         <div class="card card-default" style="margin-bottom:50px">
-
-            <div class="card-header">
-              {% if post.editor.profille_pic %}
-              <img src="{{post.editor.profile_pic.url}}" alt="" class="img-fluid rounded-circle" style="width:10%;height:10%">
-              <a href="#">{{post.editor}}</a> {% endif %}
-            </div>
-
-            <div class="card-body">
-              <p>{{post.post}}</p>
-            </div>
-
-            <div class="card-footer">
-              <p><b>{{post.post_date | timesince}} ago</b></p>
-            </div>
-
+          <div class="card-header">
+            {% if post.editor.profille_pic %}
+            <img src="{{post.editor.profile_pic.url}}" alt="" class="img-fluid rounded-circle" style="width:10%;height:10%">
+            <a href="#">{{post.editor}}</a> {% endif %}
+          </div>
+          <div class="card-body">
+            <p>{{post.post}}</p>
+          </div>
+          <div class="card-footer">
+            <p><b>{{post.post_date | timesince}} ago</b></p>
+          </div>
         </div>
-
         {% endfor %}
       </div>
       <div class="col-md-1 col-lg-1 col-sm-1 col-xs-1"></div>
