@@ -42,3 +42,35 @@ def new_neighbor(request):
                 neighbor.save()
                 return redirect('home')
     return render(request, 'new-hood.html', {'form':form })
+
+
+@login_required(login_url='/accounts/login/')
+def create_profile(request):
+    current_user = request.user
+    if request.method == 'POST':
+        form = CreateProfileForm(request.POST,request.FILES)
+        if form.is_valid():
+            new = form.save(commit=False)
+            new.user = current_user
+            new.save()
+            return redirect(view_profile)
+    else:
+        form = CreateProfileForm()
+    return render(request,'profile/create.html',{"upload_form":form})
+
+
+@login_required(login_url='/accounts/login/')
+def neighbor(request):
+    current_user = request.user
+    myuser = MyUser.get_user()
+    posts = Post.get_post()
+    count = 0
+    jirani= Neighbor.get_neighbor()
+    neighbor = get_object_or_404(Neighbor)
+    for jirani in neighbor:
+        for user in myuser:
+            if user.neighbor.id == jirani.id:
+                count += 1
+    neighbor.occupants_count = count
+    neighbor.save()
+    return redirect('view_neighbor')
