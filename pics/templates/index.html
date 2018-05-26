@@ -1,0 +1,61 @@
+ {%extends 'all-pics/base.html'%} {% block content %} {{ block.super}}
+
+<div class="container">
+  <h1 class="text-center" style="font-family: 'Berkshire Swash', cursive;
+  color:blue;
+">WELCOME TO MY GALLERY</h1><br>
+
+  <!-- Looping through news   -->
+  {% for pics_item in photos %}
+
+  <div class="row" style="background-color:grey;">
+    <!-- displaying News articles -->
+    <div class="col-md-4">
+      <br>
+      <h2 class="text-center pics"> {{ pics_item.name }} </h2>
+      <p class="text-center item">{{ pics_item.descripton }}></p><br>
+      <p class="text-center item" style="color:white;" style="font-family: 'Handlee', cursive;
+">This was taken at:<br>{{ pics_item.location_taken }} on {{ pics_item.time_uloaded}}</p>
+    </div>
+
+        <style media="screen">
+          p{
+            font-family: 'Great Vibes', cursive;
+            font-size: 30px;
+           }
+           h2 .pics{
+             background: #2db34a;
+             border-radius: 6px
+             transition-property: background, border-radius;
+             transition-duration: 1s;
+             transition-timing-function: linear;
+           }
+          .pics:hover{
+            background: #ff7b29;
+            border-radius: 50%;
+            color: white;
+          }
+
+        </style>
+
+    <!--Display news Article images  -->
+    <div class="col-md-8">
+      <img src="{{pics_item.image.url}}" class="img-responsive image" alt="Image" width="200px" height="300px">
+      <div id="buttons" style="margin-left:50%">
+        <a href="{{pics_item.descripton}}" class="btn btn-default btn-block">Copy Image link  &nbsp<i class="glyphicon glyphicon-paperclip"></i>
+    </a></div>
+    </div>
+  </div>
+
+  <br>
+  <hr>
+  <br>
+  {% empty %}
+  <div class="row">
+    <h2 class="text-center">There No Pics Items</h2>
+  </div>
+  {% endfor %}
+
+</div>
+
+{% endblock %}

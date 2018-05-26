@@ -1,0 +1,30 @@
+{% extends 'all-pics/base.html' %} {% block content %}
+
+<div class="container">
+  <section class="no-touch">
+    <div class="wrap">
+      {% if photos %}
+      <p class="text-center" style="font-size:1.3em">Search Results: <span>{{pics|length}}</span> found matching your search crireria</p>
+      {% for pics_item in photos%}
+
+
+      <a href="{% url 'myPhoto' photo_item.id %}">
+      <div class="box">
+        <div class="boxInner">
+          <img src="{{pics_item.image.url}}"  class="img-responsive">
+          <div class="titleBox" style="font-family: 'Cabin Sketch', cursive">{{pics_item.name|upper}}</div>
+        </div>
+      </div>
+      </a>
+      {% endfor %}
+      {% else %}
+      <div class="wrap">
+        <h1 class="text-center">No Photos found with that search criteria </h1>
+      </div>
+      {% endif %}
+    </div>
+
+  </section>
+</div>
+
+{% endblock %}
