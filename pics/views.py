@@ -16,7 +16,7 @@ def single_photo(request, photo_id):
     return render(request, 'photo.html', {'photo':photo})
 
 def search_results(request):
-    if '' in request.GET and request.GET['photos']:
+    if 'photos' in request.GET and request.GET['photos']:
         search_term = request.GET.get('photos')
         searched_photo = Photos.search_by_name(search_term)
         message = f"{search_term}"
