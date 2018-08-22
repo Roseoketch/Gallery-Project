@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>jua jirani</title>
+  </head>
+  <body>
+    <a href="/home"><i class="far fa-arrow-alts-circle-left">back</i><a/>
+
+    {% for neighbor in neighbors %}
+
+  	<div class="container">
+  		<header>
+  		 <div class="bio">
+  				<div class="desc"> <br> <br>
+  					<p>last active:22hours ago</p>
+  				</div>
+  		 </div>
+
+  			<div class="avatarcontainer">
+          <label style=""> {{neighbor.name}}</label>
+          <label> {{neighbor.location}}</label>
+  			</div>
+
+  		</header>
+
+  		<div class="content">
+  			<div class="data">
+  				<ul>
+  					<li>
+              <label> {{neighbor.occupants_count}}</label>
+
+  						<span>members</span>
+  					</li>
+  					<li>
+  						<span>Followers</span>
+  					</li>
+  					<li>
+  						<span>Following</span>
+  					</li>
+  				</ul>
+  			</div>
+
+  			<div class="follow"> <div class="icon-"></div> join</div>
+  		</div>
+
+  	</div>
+  {% endfor %}
+
+  </body>
+</html>
